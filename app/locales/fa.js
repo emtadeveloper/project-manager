@@ -13,5 +13,15 @@ const lanquage = {
             WrongUserNameOrPassword: 'نام کاربری یا رمز عبور اشتباه میباشد',
             DoNotRepeatTheSamePassword: 'رمز عبور با تکرار آن یکسان نمیباشد',
       },
+      user: {
+            UpdateProfile: 'به روز رسانی  با موفقیت انجام شد',
+            WrongUpdateProfile: 'به روز رسانی انجام نشد',
+            ChooesImage: 'لطفا یک تصویر را انتخاب کنید',
+            WrongFormatImage: 'فرمت ارسال شده صحیح نمیباشد',
+            HighFileSize: 'حجم فایل نمیتواند بیبشتر از 2 مگابایت باشد',
+      },
+      middlewares: {
+            wrongLogin: 'لطفا وارد حساب کاربری خود شوید',
+      },
 };
 module.exports = { lanquage };

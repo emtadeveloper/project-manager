@@ -14,11 +14,7 @@ module.exports = class Application {
       configApplication() {
             const path = require('path');
             this.#app.use(this.#express.json());
-            this.#app.use(
-                  this.#express.urlencoded({
-                        extended: true,
-                  }),
-            );
+            this.#app.use(this.#express.urlencoded({ extended: true }));
             this.#app.use(this.#express.static(path.join(__dirname, '..', 'public')));
       }
 
@@ -32,6 +28,7 @@ module.exports = class Application {
 
       configDatabase(DB_URL) {
             const mongoose = require('mongoose');
+
             mongoose
                   .connect(DB_URL)
                   .then(() => {
@@ -61,9 +58,7 @@ module.exports = class Application {
 
       createRoutes() {
             this.#app.get('/', (req, res, next) => {
-                  return res.json({
-                        message: 'this is a new Express aplication',
-                  });
+                  return res.json({ message: 'this is a new Express aplication' });
             });
             this.#app.use(AllRoutes);
       }
