@@ -1,20 +1,19 @@
-const { body } = require('express-validator');
-const path = require('path');
-const { lanquage } = require('../../locales/fa');
-
+const {body} = require("express-validator");
+const path = require("path");
 function imageValidator() {
-      return [
-            body('image').custom((value, { req }) => {
-                  if (Object.keys(req.file).length == 0) throw lanquage.user.ChooesImage;
-                  const ext = path.extname(req.file.originalname);
-                  const exts = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
-                  if (!exts.includes(ext)) throw lanquage.user.WrongFormatImage;
-                  const maxSize = 2 * 1024 * 1024;
-                  if (req.file.size > maxSize) throw lanquage.user.HighFileSize;
-                  return true;
-            }),
-      ];
+    return [
+        body("image").custom((value, {req}) => {
+            console.log(req.file, "=====");
+            if (!Boolean(req.file)) throw "لطفا یک تصویر را انتخاب کنید";
+            const ext = path.extname(req.file.originalname);
+            const exts = [".png", ".jpg", ".jpeg", ".gif", ".webp"];
+            if (!exts.includes(ext)) throw "فرمت ارسال شده صحیح نمیباشد";
+            const maxSize = 2 * 1024 * 1024;
+            if (req.file.size > maxSize) throw "حجم فایل نمیتواند بیبشتر از 2 مگابایت باشد";
+            return true;
+        }),
+    ];
 }
 module.exports = {
-      imageValidator,
+    imageValidator,
 };

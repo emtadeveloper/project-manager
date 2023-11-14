@@ -1,22 +1,17 @@
-const { validationResult } = require('express-validator');
+const { validationResult } = require("express-validator");
 
 function expressValidatorMapper(req, res, next) {
-      let messages = {};
-      const result = validationResult(req);
-      messages = {};
-      if (result?.errors?.length > 0) {
-            result?.errors.forEach(err => {
-                  console.log(err, 'err');
-                  messages[err.path] = err.msg;
-            });
-            return res.status(400).json({
-                  status: 400,
-                  success: false,
-                  messages,
-            });
-      }
-      next();
+    let message = {};
+    const result = validationResult(req);
+    if (result?.errors?.length > 0) {
+        message = {};
+        result?.errors.forEach((err) => {
+            console.log(err, "err");
+            message[err.path || err.param] = err.msg;
+        });
+        return res.status(400).json({ status: 400, success: false, message });
+    }
+    next();
 }
-module.exports = {
-      expressValidatorMapper,
-};
+
+module.exports = { expressValidatorMapper };
