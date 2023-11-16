@@ -33,6 +33,8 @@ const lanquage = {
         NotFoundProject: "پروژه ای یافت نشد",
         wrongDeleteProject: "پروژه حذف نشد",
         SuccessDeleteProject: "پروژه با موفقیت حذف شد",
+        SuccessUpdate: "به روز رسانی با موفقیت انجام شد",
+        WrongUpdate: "به روز رسانی انجام نشد",
     },
     image: {
         EmptyImage: "لطفا یک تصویر را انتخاب کنید",
