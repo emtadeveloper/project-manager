@@ -56,6 +56,18 @@ class ProjectController {
             next(error);
         }
     }
+    async removeProject(req, res, next) {
+        try {
+            const owner = req.user._id;
+            const projectID = req.params.id;
+            await this.findProject(projectID, owner);
+            const deleteProjectResult = await ProjectModel.deleteOne({_id: projectID});
+            if (deleteProjectResult.deletedCount == 0) throw {status: 400, message: lanquage.project.wrongDeleteProject};
+            return res.status(200).json({status: 200, success: true, message: lanquage.project.SuccessDeleteProject});
+        } catch (error) {
+            next(error);
+        }
+    }
 }
 module.exports = {
     ProjectController: new ProjectController(),
