@@ -1,6 +1,6 @@
 const {UserController} = require("../http/controllers/user.controller");
 const {checkLogin} = require("../http/middlewares/autoLogin");
-const {imageValidator} = require("../http/validations/user");
+const {imageValidator} = require("../http/validations/image");
 const {upload_multer} = require("../modules/multer");
 const {expressValidatorMapper} = require("../http/middlewares/checkErrors");
 const router = require("express").Router();

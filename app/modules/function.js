@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const path = require("path");
+const {lanquage} = require("../locales/fa");
 
 function hashString(str) {
     const salt = bcrypt.genSaltSync(10);
@@ -15,7 +16,7 @@ function tokenGenerator(payload) {
 
 function verifyJwtToken(token) {
     const result = jwt.verify(token, process.env.SECRET_KEY);
-    if (!result) throw {status: 401, message: "لطفا وارد حساب کاربری خود شوید"};
+    if (!result) throw {status: 401, message: lanquage.middlewares.wrongLogin};
     return result;
 }
 
