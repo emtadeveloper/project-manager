@@ -22,6 +22,7 @@ const lanquage = {
     },
     middlewares: {
         wrongLogin: "لطفا وارد حساب کاربری خود شوید",
+        wrongId: "شناسه ی ارسال شده صحیح نمیباشد",
     },
     project: {
         Emptytitle: "عنوان پروژه نمیتواند خالی باشد",
@@ -29,6 +30,7 @@ const lanquage = {
         textValidate: " توضیحات پروژه نمیتواند خالی باشد و حداقل باید 25 کاراکتر باشد",
         FailedAdd: "افزودن پروژه با مشکل مواجه شد",
         SuccessAdd: "پروژه با موفقیت ایجاد شد",
+        NotFoundProject: "پروژه ای یافت نشد",
     },
     image: {
         EmptyImage: "لطفا یک تصویر را انتخاب کنید",
