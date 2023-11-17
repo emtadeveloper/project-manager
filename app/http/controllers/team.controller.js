@@ -1,6 +1,7 @@
 const autoBind = require("auto-bind");
 const {TeamModel} = require("./../../models/team");
 const {lanquage} = require("../../locales/fa");
+const {UserModel} = require("../../models/user");
 
 class TeamController {
     constructor() {
@@ -79,6 +80,8 @@ class TeamController {
             const userID = req.user._id;
             const {teamID} = req.params;
             const team = await TeamModel.findOne({owner: userID, _id: teamID});
+
+            console.log(userID, teamID, team, "team");
             Object.keys(data).forEach(key => {
                 if (!data[key]) delete data[key];
                 if (["", " ", undefined, null, NaN].includes(data[key])) delete data[key];
@@ -87,6 +90,35 @@ class TeamController {
             const teamEditResult = await TeamModel.updateOne({_id: teamID}, {$set: data});
             if (teamEditResult.modifiedCount == 0) throw {status: 500, message: lanquage.team.WrongUpdate};
             return res.status(200).json({status: 200, success: true, message: lanquage.team.SuccessUpdate});
+        } catch (error) {
+            next(error);
+        }
+    }
+    async findUserInTeam(teamID, userID) {
+        const result = await TeamModel.findOne({
+            $or: [{owner: userID}, {users: userID}],
+            _id: teamID,
+        });
+        return !!result;
+    }
+    async inviteUserToTeam(req, res, next) {
+        try {
+            const userID = req.user._id;
+            const {username, teamID} = req.params;
+            const team = await this.findUserInTeam(teamID, userID);
+            if (!team) throw {status: 400, message: "تیمی جهت دعوت کردن افراد یافت نشد"};
+            const user = await UserModel.findOne({username});
+            if (!user) throw {status: 400, message: "کاربر مورد نظر جهت دعوت به تیم یافت نشد"};
+            const userInvited = await this.findUserInTeam(teamID, user._id);
+            if (userInvited) throw {status: 400, message: "کاربر مورد نظر قبلا به تیم دعوت شده است"};
+            console.log(req.user.username);
+            const request = {requestDate: new Date(), status: "pending", teamID, caller: req.user.username};
+            const updateUserResult = await UserModel.updateOne({username}, {$push: {inviteRequests: request}}).catch(err => {
+                throw {status: 400, message: "متاسفانه در دیتابیس مشکلی برامون پیش آمده است لطفا شکیبا باشید"};
+            });
+            console.log(updateUserResult, "updateUserResult");
+            if (updateUserResult?.modifiedCount == 0) throw {status: 500, message: "ثبت درخواست دعوت ثبت نشد"};
+            return res.status(200).json({status: 200, success: true, message: "ثبت درخواست با موفقیت ایجاد شد"});
         } catch (error) {
             next(error);
         }
