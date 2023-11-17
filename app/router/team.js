@@ -20,6 +20,8 @@ router.delete("/remove/:id", checkLogin, mongoIDValidator(), expressValidatorMap
 
 router.put("/update/:teamID", checkLogin, TeamController.updateTeam);
 
+router.get("/invite/:teamID/:username", checkLogin, TeamController.inviteUserToTeam)
+
 module.exports = {
     teamRoutes: router,
 };

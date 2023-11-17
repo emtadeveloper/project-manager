@@ -24,6 +24,7 @@ class AuthController {
             const compareResult = bcrypt.compareSync(password, user.password);
             if (!compareResult) throw {status: 401, message: lanquage.auth.WrongUserName};
             const token = tokenGenerator({username});
+            console.log(token, "token");
             user.token = token;
             await user.save();
             return res.status(200).json({status: 200, success: true, message: lanquage.auth.SuccessLogin, token});
