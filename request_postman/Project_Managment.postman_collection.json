@@ -1,0 +1,857 @@
+{
+	"info": {
+		"_postman_id": "6b1b9497-e683-477a-92a5-555b1ab2e9a8",
+		"name": "Project_Managment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get_profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"user-agent": true,
+							"accept": true,
+							"host": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE2OTk5ODMzMTV9.vIywt1wN_YcPMkHM2uueYwBu5Ot0jwr_xLNENH4e4-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.ZW1hZFRhZ2hpcG91cg.70qnyaDiMbYOW00LqMEvfYUYR0APIWGAK7BRidLUnHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Emad/Pictures/Screenshots/Screenshot (149).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_profile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"user-agent": true,
+							"accept": true,
+							"host": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE2OTk5ODMzMTV9.vIywt1wN_YcPMkHM2uueYwBu5Ot0jwr_xLNENH4e4-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.ZW1hZFRhZ2hpcG91cg.70qnyaDiMbYOW00LqMEvfYUYR0APIWGAK7BRidLUnHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"first_name\" : \"emad\",\r\n    \"last_name\" : \"taghipour\",\r\n    \"skills\" : [\"programmin\", \"nodejs\", \"express.js\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_profile_image",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"user-agent": true,
+							"accept": true,
+							"host": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE2OTk5ODMzMTV9.vIywt1wN_YcPMkHM2uueYwBu5Ot0jwr_xLNENH4e4-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.ZW1hZFRhZ2hpcG91cg.70qnyaDiMbYOW00LqMEvfYUYR0APIWGAK7BRidLUnHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_invite_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hamVkdGFnaGlwb3VyIiwiaWF0IjoxNzAwMjM5Nzc4fQ.gPGay6OR28R3odhCMRQu2u0SLDnZd5SaLuFfaSHJZ_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hamVkdGFnaGlwb3VyIiwiaWF0IjoxNzAwMjM5Nzc4fQ.gPGay6OR28R3odhCMRQu2u0SLDnZd5SaLuFfaSHJZ_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/requests/accepted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"requests",
+								"accepted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change_requset_status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hamVkdGFnaGlwb3VyIiwiaWF0IjoxNzAwMjM5Nzc4fQ.gPGay6OR28R3odhCMRQu2u0SLDnZd5SaLuFfaSHJZ_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/change-status-request/65579f111ef760b6a503fc50/accepted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"change-status-request",
+								"65579f111ef760b6a503fc50",
+								"accepted"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "imantaghipour",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "iman137671@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "09150494986",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "confrim_password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "majedtaghipour",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "create_project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWRUYWdoaXBvdXIiLCJpYXQiOjE2OTkzNzkwMDl9.1dsB05lDxAHzsIRpdKLIsO-0wyZOY78XDSxtW64S03o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "پروژه 3",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[ \"emad\" , \"ali\",\"emad\" , \"ali\",\"emad\" , \"ali\",\"emad\" , \"ali\",\"emad\"  ]",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Emad/Pictures/Screenshots/Screenshot (151).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/project/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAxMzMxNTl9.VjE4Yl20FIXQe0GAeKp9XhPqVm5s5wuNzB36Vek3FlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/project/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "one_project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAxMzMxNTl9.VjE4Yl20FIXQe0GAeKp9XhPqVm5s5wuNzB36Vek3FlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/project/6555e2f3f6add0f03c621ac0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"6555e2f3f6add0f03c621ac0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_project_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImltYW50YWdoaXBvdXIiLCJpYXQiOjE3MDAxNDE2ODZ9.I7fAwx7XBGGl1xua77f-FHSjAGwudSlHn_ekwsaugiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/project/list-project-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"list-project-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAxMzMxNTl9.VjE4Yl20FIXQe0GAeKp9XhPqVm5s5wuNzB36Vek3FlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/project/remove/6555f2279e9fa4398786d603",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"remove",
+								"6555f2279e9fa4398786d603"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAxMzMxNTl9.VjE4Yl20FIXQe0GAeKp9XhPqVm5s5wuNzB36Vek3FlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tags",
+									"value": "[\"Reza\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/project/edit/6555e2f3f6add0f03c621ac0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"edit",
+								"6555e2f3f6add0f03c621ac0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_image_project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAxMzMxNTl9.VjE4Yl20FIXQe0GAeKp9XhPqVm5s5wuNzB36Vek3FlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Emad/Pictures/Screenshots/Screenshot (148).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/project/edit-projectImage/6555e2f3f6add0f03c621ac0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"project",
+								"edit-projectImage",
+								"6555e2f3f6add0f03c621ac0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "create_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAyMzQwOTh9.FWhBk6k0Bco3CeVqstmTLZUsYG1fBrPqQsy2uvGZg5E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Team iman 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "imanTa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/team/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAyMzQwOTh9.FWhBk6k0Bco3CeVqstmTLZUsYG1fBrPqQsy2uvGZg5E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/team/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "one_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAyMzQwOTh9.FWhBk6k0Bco3CeVqstmTLZUsYG1fBrPqQsy2uvGZg5E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/team/65578393d247dd976ff18724",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"65578393d247dd976ff18724"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hamVkVGFnaGlwb3VyIiwiaWF0IjoxNzAwMTY2NTUyfQ.QRw16sVAVYVDeOzGcuU4B8V3qOgo-f8w4wNbXbFsox4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/team/remove/65567bc0a26f8874d24821d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"remove",
+								"65567bc0a26f8874d24821d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAyMzQ4ODJ9.FbW99me05HxaOoUmCnQ35OfAmROjniSkAGMQZalQqTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/team/update/65578526f60ad1b082fd8370",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"update",
+								"65578526f60ad1b082fd8370"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invite_to_team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtYWR0YWdoaXBvdXIiLCJpYXQiOjE3MDAyMzQ4ODJ9.FbW99me05HxaOoUmCnQ35OfAmROjniSkAGMQZalQqTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/team/invite/65578393d247dd976ff18724/majedtaghipour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team",
+								"invite",
+								"65578393d247dd976ff18724",
+								"majedtaghipour"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
