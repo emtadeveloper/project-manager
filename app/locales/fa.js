@@ -41,5 +41,20 @@ const lanquage = {
         WrongFormatImage: "فرمت ارسال شده صحیح نمیباشد",
         ImageSizeImage: "حجم فایل نمیتواند بیبشتر از 2 مگابایت باشد",
     },
+    team: {
+        WrongName: "نام تیم نمیتواند کمتر از 5 نویسه باشد",
+        EmptyDescription: "توضیحات نمیتواند خالی باشد",
+        DuplicateUserName: "نام کاربری قبلا توسط تیم دیگری استفاده شده است",
+        WrongUserName: "نام کاربری را به طور صحیح وارد کنید",
+        WrongCreateTeam: "ایجاد تیم با مشکل مواجه شد",
+        SuccessCreateTeam: "ایجاد تیم با موفقیت انجام شد",
+        NotFoundTeam: "تیمی ای یافت نشد",
+        DontCreate: "قبلا توسط شما تیم ساخته شده است",
+        WrongDelete: "حذف تیم انجام نشد مجددا تلاش کنید",
+        SuccessDelete: "حذف تیم با موفقیت انجام شد",
+        NotFoundTeam: "تیمی با این مشخصات یافت نشد",
+        WrongUpdate: "به روز رسانی مشخصات تیم انجام نشد",
+        SuccessUpdate: "به روز رسانی با موفقیت انجام شد",
+    },
 };
 module.exports = {lanquage};
